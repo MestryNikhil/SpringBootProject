@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
-<%@ include file="/WEB-INF/views/commons/header.jsp" %>
-<%@ include file="/WEB-INF/views/commons/navlibrarian.jsp" %>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+<%@ include file="/WEB-INF/views/navlibrarian.jsp" %>
 <c:choose> 
 <c:when test="${mode == 'NewStudent' || mode == 'EditStudent'}">
 <form action="saveStudent" method="post" style="width:600px">
@@ -88,4 +88,4 @@
 </c:when>
 
 </c:choose>
-<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
+<%@ include file="/WEB-INF/views/footer.jsp"%>

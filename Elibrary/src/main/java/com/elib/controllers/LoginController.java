@@ -36,12 +36,5 @@ public class LoginController {
 		return "welcome";
 		
 	}
-	  @RequestMapping("/adminonly")
-	    public String adminPage(Model model) {
-	    	return "adminpage";
-	    }
-	    @RequestMapping("/libonly")
-	    public String libPage(Model model) {
-	    	return "libpage";
-	    	}
+
 }

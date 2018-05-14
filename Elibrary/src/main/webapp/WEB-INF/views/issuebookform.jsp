@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
-<%@ include file="/WEB-INF/views/commons/header.jsp" %>
-<%@ include file="/WEB-INF/views/commons/navlibrarian.jsp" %>
+<%@ include file="/WEB-INF/views/header.jsp" %>
+<%@ include file="/WEB-INF/views/navlibrarian.jsp" %>
 
 
 <c:choose> 
@@ -72,4 +72,4 @@
 <h1> Book is out of stock</h1>
 </c:when>
 </c:choose>
-<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
+<%@ include file="/WEB-INF/views/footer.jsp"%>

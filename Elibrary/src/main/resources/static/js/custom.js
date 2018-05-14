@@ -1,1 +1,1 @@
-prompt("Read To Ride!");
+alert("Read To Ride!");
