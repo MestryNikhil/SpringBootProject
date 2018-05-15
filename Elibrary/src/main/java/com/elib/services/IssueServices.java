@@ -2,12 +2,8 @@ package com.elib.services;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import org.springframework.web.servlet.ModelAndView;
-
 import com.elib.dao.IssueRepository;
 import com.elib.models.Book;
 import com.elib.models.IssueBook;
@@ -35,9 +31,7 @@ public class IssueServices {
 		Book book =bookservices.findOneBook(bid);
 		int issued = book.getIssued();
 		book.setIssued(issued-1);
-		bookservices.saveBook(book);
-		
-	
+		bookservices.saveBook(book);	
 		
 	}
 
