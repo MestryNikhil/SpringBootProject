@@ -19,31 +19,6 @@ public class IssueServices {
 	@Autowired
 	private Bookservices bookservices; 
 
-/*
-	public ModelAndView issueBook(IssueBook issueBook) {
-		ModelAndView mv=new ModelAndView("issuebookform");
-		long bid =issueBook.getBid();
-		Book book= bookservices.findOneBook(bid);
-		
-		int quantity=book.getQuantity();
-		int issued=book.getIssued();
-		
-		if(quantity > issued) {
-			issueRepository.save(issueBook);
-			book.setIssued(issued + 1);
-			bookservices.saveBook(book);
-			mv.addObject("mode", "BookIssued");
-			
-		}else {
-			mv.addObject("mode", "OutOfStock");
-			
-		}
-	
-		return mv;
-		
-	}
-	
-*/	
 
 	public List<IssueBook> findAllIssued() {
 		List<IssueBook> issuedBooks =new ArrayList<IssueBook>();
