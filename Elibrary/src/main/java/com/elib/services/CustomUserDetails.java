@@ -27,14 +27,23 @@ public class CustomUserDetails implements UserDetailsService {
 	@Override
 	@Transactional(readOnly=true)
 	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-		Librarian user=libRepository.findByName(name);
+		Librarian user = libRepository.findByName(name);
+		String username =null;
+		String userpass =null;
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         
-        for(Role role:user.getRoles()) {
-        	grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_"+role.getName()));
+        if(user != null) {
+        	username =user.getName();
+        	userpass=user.getPassword();
+	        for(Role role:user.getRoles()) {
+	        	grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_"+role.getName()));
+	        }
+                
         }
-       return new User(user.getName(),user.getPassword(),grantedAuthorities);
-	}
-
+        else {
+        	throw new UsernameNotFoundException("User not found.");
+   }
+        return new User(username,userpass,grantedAuthorities);
+ }
 }
- 
+	
